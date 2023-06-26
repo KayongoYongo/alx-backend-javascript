@@ -1,15 +1,9 @@
 export default function iterateThroughObject(reportWithIterator) {
-  let employeeNames = '';
-
-  for (const department in reportWithIterator.allEmployees) {
-    const employees = reportWithIterator.allEmployees[department];
-    for (const employee of employees) {
-      employeeNames += employee + ' | ';
-    }
+  let result = '';
+  for (const employee of reportWithIterator) {
+    result += `${employee} | `;
   }
-
-  // Remove the trailing ' | '
-  employeeNames = employeeNames.slice(0, -3);
-
-  return employeeNames;
+  // Remove the trailing ' | ' from the result
+  result = result.slice(0, -3);
+  return result;
 }
