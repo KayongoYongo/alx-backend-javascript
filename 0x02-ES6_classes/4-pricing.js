@@ -31,7 +31,10 @@ export default class Pricing {
 
   // Static method to convert the price using a conversion rate
   static convertPrice(amount, conversionRate) {
-    return amount * conversionRate;
+    if (typeof amount === 'number' && typeof conversionRate === 'number') {
+      return amount * conversionRate;
+    }
+    throw new TypeError('Amount and conversionRate must be numbers');
   }
 
   // Helper function to validate number type
