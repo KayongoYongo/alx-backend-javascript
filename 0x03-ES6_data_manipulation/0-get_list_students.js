@@ -2,7 +2,7 @@
  * Retrieves a list of students.
  * @returns {{id: Number, firstName: String, location: String}[]}
  */
-const getListStudents = ()  => {
+export default function getListStudents() {
   let students = [
     { "id": 1, "firstName": "Guillaume", "location": "San Francisco" },
     { "id": 2, "firstName": "James", "location": "Columbia" },
@@ -10,5 +10,3 @@ const getListStudents = ()  => {
   ];
   return students;
 };
-
-export default getListStudents;
