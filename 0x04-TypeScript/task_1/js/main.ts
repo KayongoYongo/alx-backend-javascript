@@ -31,3 +31,11 @@ console.log(director1);
 
 console.log(teacher3);
 
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  const firstLetter = firstName.charAt(0);
+  return `${firstLetter}. ${lastName}`;
+};
+
+class Student implements StudentClass {
+  constructor(private firstName: string, private lastName: string) {
+};
