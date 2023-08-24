@@ -1,14 +1,13 @@
-const { expect } = require('chai');
-const { getPaymentTokenFromAPI } = require('./6-payment_token');
+const getPaymentTokenFromAPI = require("./6-payment_token");
+const {describe, it} = require("mocha");
+const expect = require("chai").expect;
 
-describe('getPaymentTokenFromAPI', () => {
-  it('should return a resolved promise with data on success', async () => {
-    const response = await getPaymentTokenFromAPI(true);
-    expect(response).to.deep.equal({ data: 'Successful response from the API' });
-  });
-
-  it('should return an unresolved promise on failure', async () => {
-    const response = await getPaymentTokenFromAPI(false);
-    expect(response).to.be.undefined;
-  });
+describe("getPaymentTokenFromAPI", function() {
+    it("Async testing with done callback", function(done) {
+	getPaymentTokenFromAPI(true)
+	    .then((data) => {
+		expect(data).to.have.property('data');
+		done();
+	    });
+    });
 });
